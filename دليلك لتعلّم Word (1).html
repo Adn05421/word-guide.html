@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دليلك لتعلّم Word</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+<style>
+:root{--b:#0b3d91;--lb:#e3eeff;--bg:#f7faff;--card:#fff;--tx:#18212f;--mu:#566074;--ok:#146c33;--wr:#a8261c;--ln:#cfdcf2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--b:#8db6ff;--lb:#1a2a47;--bg:#0e1522;--card:#152033;--tx:#eaf0fb;--mu:#a3b0c7;--ok:#5fd18a;--wr:#ff8f85;--ln:#2a3a58}}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:17px/1.8 Tajawal,"Segoe UI",Tahoma,sans-serif;padding-bottom:84px}
+main{max-width:860px;margin:auto;padding:16px}
+h1{font-size:26px;margin:.2em 0}h2{font-size:21px;margin:1em 0 .4em}h3{font-size:18px;margin:.8em 0 .2em}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:16px;margin:12px 0}
+.hero{background:var(--b);color:#fff;border-radius:16px;padding:22px}
+.hero p{margin:.2em 0;opacity:.95}
+button{font:inherit;cursor:pointer;min-height:48px;border-radius:12px;border:2px solid var(--b);background:var(--card);color:var(--b);padding:8px 16px;font-weight:700}
+button.p{background:var(--b);color:#fff}button.w{border-color:#fff;background:#fff;color:#0b3d91}
+:root[data-theme="dark"] button.p{color:#0e1522}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #f2a900;outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1 1 150px}
+input[type=search]{width:100%;min-height:48px;border-radius:12px;border:2px solid var(--ln);padding:8px 14px;font:inherit;background:var(--card);color:var(--tx)}
+.bar{height:12px;background:var(--lb);border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok)}
+.li{display:flex;align-items:center;gap:10px;width:100%;text-align:right;margin:6px 0;border-color:var(--ln);color:var(--tx);font-weight:500}
+.li b{flex:1}.tag{font-size:14px;color:var(--mu)}.ok{color:var(--ok);font-weight:700}
+nav{position:fixed;bottom:0;inset-inline:0;display:flex;background:var(--card);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px)}
+nav button{flex:1;border:0;border-radius:0;min-height:60px;font-size:15px;color:var(--mu)}nav button.on{color:var(--b);background:var(--lb)}
+ol{padding-inline-start:24px}li{margin:6px 0}
+.seg button{border-radius:0}.seg button.on{background:var(--b);color:#fff}
+.warn{border-inline-start:5px solid var(--wr);padding-inline-start:12px}
+figure{margin:12px 0}figure svg{width:100%;max-width:520px;height:auto;display:block;margin:auto;background:var(--lb);border-radius:12px}
+figcaption{font-size:14px;color:var(--mu);text-align:center}
+.opt{display:block;width:100%;text-align:right;margin:6px 0;font-weight:500;color:var(--tx);border-color:var(--ln)}
+.opt.g{border-color:var(--ok);background:var(--lb)}.opt.r{border-color:var(--wr)}
+small{color:var(--mu)}
+</style></head><body><main id="app"></main>
+<nav id="nav"></nav>
+<script>
+const mem={};
+const S={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):(k in mem?mem[k]:d)}catch(e){return k in mem?mem[k]:d}},
+set(k,v){mem[k]=v;try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const M=['البداية مع Word','الكتابة والتحرير','تنسيق النص','تخطيط الصفحة','الصور','الجداول','الحفظ والتصدير','مهارات متقدمة','مشاريع تطبيقية'];
+const L=[
+{m:0,t:'إنشاء مستند جديد',lv:'مبتدئ',min:5,obj:'تنشئ مستندًا فارغًا وتبدأ الكتابة.',pre:'تطبيق Word مثبّت (للجوال) أو برنامج Word (للحاسوب).',
+mh:'جديد (New)',dh:'مستند فارغ',
+m_:['افتح تطبيق Word من شاشة التطبيقات.','اضغط «جديد» (New) أو علامة «+».','اختر «مستند فارغ» (Blank document).','اضغط على الصفحة لتظهر لوحة المفاتيح، ثم اكتب.'],
+d_:['افتح Word.','من الشاشة الرئيسية اختر «مستند فارغ» (Blank document).','أثناء العمل يمكنك استخدام Ctrl+N (على Mac: ⌘+N).','انقر داخل الصفحة واكتب.'],
+res:'صفحة بيضاء يومض فيها المؤشر وجاهزة للكتابة.',mis:'فتح مستند قديم بدل إنشاء جديد؛ تأكد من اختيار «مستند فارغ».',ex:'أنشئ مستندًا واكتب اسمك وتاريخ اليوم.',
+q:['أي خيار ينشئ مستندًا خاليًا؟',['مستند فارغ','نسخة من ملف','قالب جاهز فقط'],0,'«مستند فارغ» يعطيك صفحة بيضاء.'],tip:'قد تختلف أماكن الأزرار بين أندرويد وآيفون وحسب الإصدار.'},
+{m:0,t:'تحديد النص والتراجع',lv:'مبتدئ',min:6,obj:'تحدد كلمة أو فقرة وتتراجع عن أي خطأ.',pre:'مستند فيه نص.',
+mh:'تراجع (Undo)',dh:'Ctrl+Z',
+m_:['اضغط ضغطة مزدوجة على كلمة لتحديدها.','اسحب المقبضين الصغيرين لتوسيع التحديد.','للتراجع اضغط سهم «تراجع» (Undo) في أعلى الشاشة.'],
+d_:['انقر مرتين لتحديد كلمة وثلاث مرات لتحديد فقرة.','Ctrl+A يحدد المستند كله.','Ctrl+Z للتراجع وCtrl+Y للإعادة.'],
+res:'يظهر النص المحدد مظلّلًا، ويعود المستند لحالته السابقة عند التراجع.',mis:'الكتابة فوق نص محدد دون قصد؛ استخدم «تراجع» فورًا.',ex:'حدّد فقرة ثم احذفها ثم تراجع عن الحذف.',
+q:['ما اختصار التراجع على الحاسوب؟',['Ctrl+Z','Ctrl+B','Ctrl+P'],0,'Ctrl+Z هو التراجع.'],tip:'التراجع يعمل لعدة خطوات متتالية.'},
+{m:1,t:'البحث والاستبدال',lv:'مبتدئ',min:7,obj:'تجد كلمة وتستبدلها في كل المستند.',pre:'مستند فيه نص مكرر.',
+mh:'بحث 🔍',dh:'Ctrl+H',
+m_:['اضغط أيقونة البحث 🔍 أعلى المستند.','اكتب الكلمة المطلوبة وتنقّل بين النتائج.','للاستبدال افتح خيارات البحث واختر «استبدال» (Replace) إن ظهرت في إصدارك.'],
+d_:['Ctrl+F للبحث.','Ctrl+H يفتح «بحث واستبدال» (Find and Replace).','اكتب الكلمة والبديل ثم «استبدال» أو «استبدال الكل» (Replace All).'],
+res:'تُمَيَّز الكلمات الموجودة وتتغير عند الاستبدال.',mis:'استخدام «استبدال الكل» قبل مراجعة النتائج؛ راجعها أولًا.',ex:'استبدل كلمة «الشركة» باسم شركة في فقرة تجريبية.',
+q:['أي اختصار يفتح الاستبدال؟',['Ctrl+H','Ctrl+S','Ctrl+N'],0,'Ctrl+H يفتح نافذة بحث واستبدال.'],tip:'خيار الاستبدال على الجوال محدود أكثر من الحاسوب.'},
+{m:2,t:'الخط والتنسيق الأساسي',lv:'مبتدئ',min:8,obj:'تغيّر الخط والحجم وتطبّق غامق ومائل وتسطير.',pre:'نص مكتوب.',
+mh:'الصفحة الرئيسية (Home)',dh:'مجموعة الخط',
+m_:['حدّد النص.','اضغط أيقونة التحرير (حرف A مع قلم) لفتح الشريط.','من «الصفحة الرئيسية» (Home) اختر الخط والحجم، ثم B أو I أو U.'],
+d_:['حدّد النص.','من تبويب «الصفحة الرئيسية» (Home) استخدم مجموعة «الخط» (Font).','اختصارات: Ctrl+B غامق، Ctrl+I مائل، Ctrl+U تسطير.'],
+res:'يتغير شكل النص المحدد فقط.',mis:'نسيان تحديد النص قبل التنسيق.',ex:'اجعل عنوانًا بحجم 18 وغامقًا ونصًا عاديًا بحجم 12.',
+q:['ما الذي يجب فعله قبل تغيير الخط؟',['تحديد النص','إغلاق المستند','حفظ نسخة'],0,'التنسيق يُطبّق على المحدد.'],tip:'استخدم خطًا واحدًا أو اثنين فقط ليبدو المستند منظمًا.'},
+{m:3,t:'اتجاه الصفحة والهوامش',lv:'مبتدئ',min:7,obj:'تحوّل الصفحة لعرضية وتضبط الهوامش.',pre:'مستند مفتوح.',
+mh:'تخطيط (Layout)',dh:'تخطيط ← الاتجاه',
+m_:['افتح الشريط واختر تبويب «تخطيط» (Layout).','اختر «الاتجاه» (Orientation) ثم عمودي أو أفقي.','اختر «الهوامش» (Margins) إن توفرت في إصدارك.'],
+d_:['افتح تبويب «تخطيط» (Layout).','اختر «الاتجاه» (Orientation).','اختر «الهوامش» (Margins) ثم قيمة جاهزة أو «هوامش مخصصة».'],
+res:'يتغير شكل الصفحة وعرض النص.',mis:'تغيير الاتجاه بعد تنسيق الجداول قد يغيّر توزيعها؛ راجعها.',ex:'اجعل صفحة جدول أفقية وصفحة نص عمودية.',
+q:['أي تبويب يضم الاتجاه؟',['تخطيط (Layout)','إدراج (Insert)','عرض (View)'],0,'الاتجاه في تبويب تخطيط.'],tip:'قد يختلف مكان بعض الخيارات على الجوال.'},
+{m:4,t:'إدراج صورة',lv:'مبتدئ',min:8,obj:'تُدرج صورة وتغيّر حجمها وموضعها.',pre:'صورة محفوظة على الجهاز.',
+mh:'إدراج ← صور',dh:'إدراج ← صور',
+m_:['ضع المؤشر في المكان المطلوب.','افتح «إدراج» (Insert) ثم «صور» (Pictures).','اسمح بالوصول إلى الصور إن طُلب منك ثم اختر الصورة.','اسحب زوايا الصورة لتغيير حجمها. بعض خيارات التفاف النص قد تكون محدودة على الجوال.'],
+d_:['افتح «إدراج» (Insert) ← «صور» (Pictures) ← «هذا الجهاز».','اختر الصورة.','اسحب من زاوية الصورة للحفاظ على النسبة.','من «تنسيق الصورة» اختر «التفاف النص» (Wrap Text).'],
+res:'تظهر الصورة داخل المستند ويمكن تحريكها.',mis:'السحب من منتصف الحافة يشوّه النسبة؛ اسحب من الزاوية.',ex:'أدرج صورة وضعها وسط الصفحة.',
+q:['كيف تحافظ على نسبة الصورة؟',['السحب من الزاوية','السحب من الجانب','تكبير الخط'],0,'الزوايا تحافظ على النسبة.'],tip:'وضوح خيارات التفاف النص أفضل على الحاسوب.'},
+{m:5,t:'إدراج جدول',lv:'مبتدئ',min:9,obj:'تنشئ جدول جدول أسبوعي بسيط.',pre:'مستند فارغ.',
+mh:'إدراج ← جدول',dh:'إدراج ← جدول',
+m_:['افتح «إدراج» (Insert) ثم «جدول» (Table).','حدّد عدد الصفوف والأعمدة.','اضغط الخلية واكتب.','لإضافة صف أو عمود استخدم أدوات الجدول التي تظهر عند الضغط داخله.'],
+d_:['«إدراج» (Insert) ← «جدول» (Table).','مرّر على الشبكة واختر العدد ثم انقر.','اكتب بياناتك واستخدم Tab للانتقال للخلية التالية.','من «تخطيط الجدول» أضف صفوفًا وأعمدة.'],
+res:'جدول منظم يمكن التعبئة فيه.',mis:'اختيار أعمدة كثيرة جدًا على شاشة صغيرة.',ex:'أنشئ جدولًا من 6 أعمدة (الأيام) وصفين (الصباح والمساء).',
+q:['أي مفتاح ينقلك للخلية التالية؟',['Tab','Esc','Delete'],0,'Tab ينقلك للخلية التالية.'],tip:'اجعل الصف الأول عناوين الأعمدة.'},
+{m:6,t:'الحفظ والتصدير PDF',lv:'مبتدئ',min:8,obj:'تحفظ المستند وتحصل على نسخة PDF.',pre:'مستند جاهز.',
+mh:'ملف (File)',dh:'ملف ← تصدير',
+m_:['افتح قائمة «ملف» (File) أو ⋯.','اختر «حفظ نسخة» (Save a copy) لحفظه باسم وموقع.','للـ PDF ابحث عن «تصدير» أو «مشاركة» ← PDF. يختلف الخيار حسب الجهاز والإصدار.'],
+d_:['«ملف» (File) ← «حفظ باسم» (Save As) واختر الموقع.','«ملف» ← «تصدير» (Export) ← «إنشاء PDF».','اختر الاسم ثم «نشر» (Publish).'],
+res:'ملف .docx قابل للتعديل، وملف PDF للقراءة والمشاركة.',mis:'الخلط بين الحفظ والتصدير: الحفظ يُبقي المستند قابلًا للتعديل.',ex:'احفظ مستندك ثم أنشئ منه PDF.',
+q:['ما صيغة ملف Word القابل للتعديل؟',['.docx','.pdf','.png'],0,'.docx هي الصيغة الأساسية.'],tip:'الحفظ السحابي يتطلب حساب Microsoft وقد لا يتوفر دون إنترنت.'},
+{m:7,t:'جدول المحتويات التلقائي',lv:'متوسط',min:10,obj:'تنشئ فهرسًا يتحدث تلقائيًا.',pre:'مستند فيه عناوين.',
+mh:'غير متاح بالكامل',dh:'مراجع ← جدول المحتويات',
+m_:['تطبيق أنماط العناوين متاح غالبًا، لكن إنشاء جدول المحتويات قد لا يتوفر في كل إصدارات الجوال.','افتح المستند على الحاسوب لإنشائه، ثم عُد لعرضه على الجوال.'],
+d_:['طبّق «عنوان 1» (Heading 1) على العناوين الرئيسية.','افتح «مراجع» (References) ← «جدول المحتويات» (Table of Contents).','للتحديث انقر عليه ثم «تحديث الجدول».'],
+res:'فهرس بأرقام الصفحات يمكن تحديثه.',mis:'كتابة العناوين بتكبير الخط فقط دون تطبيق نمط العنوان.',ex:'أنشئ ثلاثة عناوين وفهرسًا لها.',
+q:['ما شرط الفهرس التلقائي؟',['تطبيق أنماط العناوين','إدراج صورة','تغيير الهوامش'],0,'الفهرس يقرأ أنماط العناوين.'],tip:'هذه ميزة يُفضّل تعلمها من مسار الحاسوب.'},
+{m:8,t:'مشروع: خطاب رسمي',lv:'متوسط',min:20,obj:'تكتب خطابًا منسقًا وتصدّره PDF.',pre:'إتمام دروس الكتابة والتنسيق والحفظ.',
+mh:'ملف ← مشاركة',dh:'ملف ← تصدير',
+m_:['أنشئ مستندًا فارغًا.','اكتب التاريخ والمرسل إليه وموضوع الخطاب.','نسّق العنوان غامقًا والمحاذاة لليمين.','احفظ نسخة ثم شارك PDF.'],
+d_:['أنشئ مستندًا فارغًا.','اكتب الترويسة والموضوع والنص والتوقيع.','نسّق الفقرات بمحاذاة مناسبة وهوامش مريحة.','ملف ← تصدير ← إنشاء PDF.'],
+res:'خطاب من صفحة واحدة بتنسيق مرتب.',mis:'ازدحام النص؛ استخدم مسافات بين الفقرات.',ex:'اكتب طلب إجازة قصيرًا.',
+q:['ما الأفضل لإرسال الخطاب دون تعديل؟',['PDF','.docx دائمًا','صورة شاشة'],0,'PDF يحافظ على الشكل.'],tip:'اقرأ المستند كاملًا قبل الإرسال.',chk:['فتح مستند جديد','تنسيق العنوان','حفظ الملف','إنشاء PDF']}];
+function fig(p,lab){const hl='#f2a900';let s='';
+if(p=='m'){s=`<svg viewBox="0 0 240 170" role="img" aria-label="رسم توضيحي: ${lab}"><rect x="85" y="6" width="70" height="152" rx="10" fill="#fff" stroke="#0b3d91" stroke-width="3"/><rect x="93" y="18" width="54" height="8" fill="#cfdcf2"/><rect x="93" y="32" width="54" height="5" fill="#e3eeff"/><rect x="93" y="42" width="40" height="5" fill="#e3eeff"/><rect x="91" y="126" width="58" height="26" rx="4" fill="#e3eeff" stroke="#0b3d91"/><circle cx="105" cy="139" r="8" fill="${hl}"/><circle cx="105" cy="139" r="12" fill="none" stroke="${hl}" stroke-width="3"/><path d="M160 80 L116 130" stroke="${hl}" stroke-width="3"/><circle cx="105" cy="139" r="3" fill="#0b3d91"/><text x="165" y="76" font-size="11" fill="#0b3d91" font-family="Tajawal,sans-serif">${lab}</text></svg>`}
+else{s=`<svg viewBox="0 0 240 170" role="img" aria-label="رسم توضيحي: ${lab}"><rect x="10" y="10" width="220" height="150" rx="8" fill="#fff" stroke="#0b3d91" stroke-width="3"/><rect x="10" y="10" width="220" height="16" fill="#0b3d91"/><rect x="18" y="32" width="204" height="28" fill="#e3eeff"/><rect x="170" y="36" width="34" height="20" rx="3" fill="${hl}"/><circle cx="187" cy="46" r="22" fill="none" stroke="${hl}" stroke-width="3"/><rect x="60" y="76" width="120" height="6" fill="#cfdcf2"/><rect x="60" y="90" width="90" height="6" fill="#e3eeff"/><path d="M110 120 L172 62" stroke="${hl}" stroke-width="3"/><text x="40" y="136" font-size="11" fill="#0b3d91" font-family="Tajawal,sans-serif">${lab}</text></svg>`}
+return `<figure>${s}<figcaption>رسم توضيحي ${p=='m'?'للجوال':'للحاسوب'} (ليس لقطة شاشة رسمية)</figcaption></figure>`}
+let st={tab:'home',lid:null,plat:S.get('plat','m'),q:''};
+const done=()=>S.get('done',[]),bm=()=>S.get('bm',[]),qz=()=>S.get('qz',{});
+const $=id=>document.getElementById(id);
+function go(t,id){st.tab=t;st.lid=id??null;draw();scrollTo(0,0)}
+function pick(p){S.set('plat',p);st.plat=p;go('list')}
+function tog(k,i){let a=S.get(k,[]);a=a.includes(i)?a.filter(x=>x!=i):[...a,i];S.set(k,a);draw()}
+function ans(i,j){const q=qz();q[i]=j==L[i].q[2];S.set('qz',q);draw()}
+function rst(){if(confirm('سيتم حذف التقدم المحفوظ. هل تريد المتابعة؟')){['done','bm','qz','last'].forEach(k=>S.set(k,k=='qz'?{}:[]));draw()}}
+function item(i){const l=L[i];return `<button class="li" onclick="open_(${i})"><b>${l.t}<br><span class="tag">${M[l.m]} · ${l.lv} · ${l.min} د</span></b>${done().includes(i)?'<span class="ok">✓ مكتمل</span>':''}${bm().includes(i)?'<span>★</span>':''}</button>`}
+function open_(i){S.set('last',i);go('lesson',i)}
+function draw(){
+const d=done().length,pc=Math.round(d/L.length*100);let h='';
+if(st.tab=='home'){const nx=L.findIndex((_,i)=>!done().includes(i));
+h=`<div class="hero"><h1>دليلك لتعلّم Word</h1><p>تعلّم خطوة بخطوة. وتدرّب بنفسك.</p><p><small style="color:#dce8ff">مورد تعليمي مستقل وليس منتجًا رسميًا من Microsoft.</small></p></div>
+<h2>اختر مسار التعلّم</h2><div class="row"><button class="p" onclick="pick('m')">📱 مسار الجوال<br><small style="color:inherit">أندرويد وآيفون</small></button><button class="p" onclick="pick('d')">💻 مسار الحاسوب<br><small style="color:inherit">ويندوز وماك</small></button></div>
+<div class="card"><b>تقدّمك: ${pc}%</b> (${d} من ${L.length} دروس)<div class="bar" role="progressbar" aria-valuenow="${pc}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pc}%"></i></div>${nx>=0?`<p><button class="p" onclick="open_(${nx})">${d?'تابع من حيث توقفت':'ابدأ الدرس الأول'}</button></p>`:'<p class="ok">أتممت جميع الدروس المتاحة 🎉</p>'}</div>`}
+else if(st.tab=='list'){const q=st.q.trim();
+h=`<h1>الدروس</h1><input type="search" id="sq" placeholder="ابحث عن درس أو موضوع" aria-label="بحث" value="${q.replace(/"/g,'&quot;')}" oninput="st.q=this.value;draw();$('sq').focus();">`;
+M.forEach((m,mi)=>{const ids=L.map((l,i)=>i).filter(i=>L[i].m==mi&&(!q||(L[i].t+L[i].obj+m).includes(q)));if(ids.length)h+=`<h2>${mi+1}. ${m}</h2>`+ids.map(item).join('')});
+if(!/li/.test(h))h+='<div class="card">لا توجد نتائج. جرّب كلمة أخرى.</div>'}
+else if(st.tab=='saved'){const b=bm();h='<h1>المحفوظات ★</h1>'+(b.length?b.map(item).join(''):'<div class="card">لم تحفظ دروسًا بعد. افتح درسًا واضغط «احفظ الدرس».</div>')}
+else if(st.tab=='prog'){const r=qz(),ks=Object.keys(r);
+h=`<h1>تقدّمي</h1><div class="card"><b>${pc}%</b><div class="bar"><i style="width:${pc}%"></i></div></div><h2>الوحدات</h2>`+M.map((m,mi)=>{const ids=L.map((l,i)=>i).filter(i=>L[i].m==mi);const c=ids.filter(i=>done().includes(i)).length;return `<div class="card">${mi+1}. ${m}<br><span class="${ids.length&&c==ids.length?'ok':'tag'}">${ids.length?`${c} من ${ids.length}${c==ids.length?' ✓ مكتملة':''}`:'قريبًا'}</span></div>`}).join('')+
+`<h2>نتائج الاختبارات</h2><div class="card">${ks.length?ks.map(k=>`${L[k].t}: ${r[k]?'<span class="ok">صحيح</span>':'<span style="color:var(--wr)">خطأ</span>'}`).join('<br>'):'لا نتائج بعد.'}</div>
+<h2>المقارنة بين الجوال والحاسوب</h2><div class="card">الجوال مناسب للكتابة والتنسيق السريع والمراجعة. الحاسوب أفضل للجداول الكبيرة وجدول المحتويات والدمج البريدي. الميزات ليست متطابقة بين الإصدارين.</div>
+<button onclick="rst()">إعادة ضبط التقدم</button>`}
+else{const i=st.lid,l=L[i],p=st.plat,steps=p=='m'?l.m_:l.d_,j=qz()[i];
+h=`<p><button onclick="go('list')">→ الدروس</button></p><h1>${l.t}</h1><small>${M[l.m]} · ${l.lv} · ${l.min} دقائق</small>
+<div class="seg row" role="group" aria-label="المنصة"><button class="${p=='m'?'on':''}" onclick="st.plat='m';S.set('plat','m');draw()">📱 جوال</button><button class="${p=='d'?'on':''}" onclick="st.plat='d';S.set('plat','d');draw()">💻 حاسوب</button></div>
+<div class="card"><b>الهدف:</b> ${l.obj}<br><b>التحضير:</b> ${l.pre}</div>
+<h2>الخطوات</h2><ol>${steps.map(s=>`<li>${s}</li>`).join('')}</ol>${fig(p,p=='m'?l.mh:l.dh)}
+${p=='m'?'<small>على آيفون وأندرويد قد تختلف أماكن الأزرار قليلًا حسب الإصدار.</small>':''}
+<div class="card"><b>النتيجة المتوقعة:</b> ${l.res}</div><div class="card warn"><b>أخطاء شائعة:</b> ${l.mis}</div>
+<div class="card"><b>تمرين:</b> ${l.ex}<br><small>نفّذه في Word بنفسك؛ لا يفحص التطبيق ملفك.</small>${l.chk?'<ul>'+l.chk.map(c=>`<li>☐ ${c}</li>`).join('')+'</ul>':''}</div>
+<div class="card"><b>اختبر نفسك:</b> ${l.q[0]}${l.q[1].map((o,k)=>`<button class="opt ${j!==undefined&&k==l.q[2]?'g':''}" onclick="ans(${i},${k})">${o}</button>`).join('')}${j===undefined?'':`<p class="${j?'ok':''}">${j?'إجابة صحيحة. ':'الإجابة الصحيحة موضّحة بالأخضر. '}${l.q[3]}</p>`}</div>
+<p>💡 ${l.tip}</p>
+<div class="row"><button class="p" onclick="tog('done',${i})">${done().includes(i)?'✓ مكتمل (إلغاء)':'تحديد كمكتمل'}</button><button onclick="tog('bm',${i})">${bm().includes(i)?'★ محفوظ':'☆ احفظ الدرس'}</button></div>
+<div class="row" style="margin-top:10px">${i>0?`<button onclick="open_(${i-1})">→ السابق</button>`:''}${i<L.length-1?`<button onclick="open_(${i+1})">التالي ←</button>`:''}</div>`}
+$('app').innerHTML=h;
+const T=[['home','🏠','الرئيسية'],['list','📚','الدروس'],['saved','★','المحفوظات'],['prog','📈','تقدّمي']];
+$('nav').innerHTML=T.map(t=>`<button class="${st.tab==t[0]||(st.tab=='lesson'&&t[0]=='list')?'on':''}" onclick="go('${t[0]}')" aria-label="${t[2]}">${t[1]}<br>${t[2]}</button>`).join('')}
+draw();
+</script></body></html>
